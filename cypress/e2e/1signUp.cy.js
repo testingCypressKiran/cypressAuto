@@ -22,7 +22,7 @@ describe('signup with POM',()=>{
       signP.inputRandomEmail(data.randomMailId); 
       signP.clickSignupbtn();      
       signP.txt_verifyAccountInformation();
-      signP.clickRadioBtn();  //select and verify radio button
+      signP.clickRadioBtn();  //select and verify radio button.
       signP.enterSignupPassword(data.password);
       signP.verifyDropdownDay();
       signP.verifyDropdownMonth();

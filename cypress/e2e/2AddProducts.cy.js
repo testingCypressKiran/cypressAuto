@@ -30,7 +30,7 @@ describe('Adding products with POM',()=>{
      productP.clickSubmitSearch();
      productP.verifySearchedPage();
      productP.clickAddProduct1(); //add product1, verify successful addition of the product and click on continue shopping button.
-     productP.clickAddProduct2();//view product and verify prodcut image, add to cart and view cart
+     productP.clickAddProduct2();//view product and verify prodcut image, add to cart and view cart.
      cart.verifyViewCartPage();
      cart.clickProceed();
      cart.verifyCheckoutPage();
