@@ -12,7 +12,7 @@ describe('signup with POM',()=>{
   
   beforeEach(() => {
     cy.visit('/') 
-    home.verifyLogo() // Verify that you are on the homepage
+    home.verifyLogo() // Verify that you are on the homepage.
   })
   
     it("signup with correct mail id",()=>{
