@@ -1,0 +1,21 @@
+name: Cypress Testing
+
+on:
+  push
+
+jobs:
+  cypress-run:
+    name: Cypress Run
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Cypress Tests
+        uses: cypress-io/github-action@v6
+        with:
+          command: npx cypress run
