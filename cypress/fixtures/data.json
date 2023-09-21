@@ -1,0 +1,50 @@
+{
+    "userName": "Kiran",
+    "lname": "Pradhan",
+    "emailId": "prdhnkiran12@gmail.com",
+    "password": "Database@123",
+    "search" : "Tshirt",
+    "cardNumber" : "123456789",
+    "cvv": "123",
+    "month" : "12",
+    "year" : "2023",
+    "address": "Address",
+    "state": "Assam",
+    "city": "Guwahati",
+    "zip": "784170",
+    "Mnumber": "7976044428",
+    "wrongMailId": "dwefff",
+    "randomMailId": "",
+ 
+    
+    "addReview": "This is a good product.",
+    "addSubject": "add subject here",
+    "addMessage":"Report an issue",
+
+    "contactUsPageVerifyText": "Get In Touch",
+    "windowAlertText": "Press OK to proceed!",
+    "successfulSubmText": "Success! Your details have been submitted successfully.",
+    "fileUpload":"ReadMe.txt",
+
+    "loginVerifyText" : "Kiran",
+
+    "PaymentText" : "Payment",
+    "verifOrderPlacedText":"Congratulations! Your order has been confirmed!",
+
+    "reviewPageVerifyText": "Write Your Review",
+    "successfulReviewText" :"Thank you for your review.",
+    
+    "viewCartPageText" : "Shopping Cart",
+    "checkoutPageText" : "Checkout",
+ 
+    "existingMailTEXT" : "Email Address already exist!",
+    "signupPageText" : "New User Signup!",
+    "accountInformationText" : "Enter Account Information",
+    "invalidEmailText": "Please include an '@' in the email address. 'dwefff' is missing an '@'.",
+    "passwrdText": "Please fill out this field.",
+    "accountCreationText" : "Account Created!",
+
+    "searchedPage" : "Searched Products",
+    "addingProductText" : "Your product has been added to cart."
+
+}
