@@ -17,13 +17,11 @@ const signP=new signup();
   beforeEach(() => {
     cy.visit('/')
     home.verifyLogo() // Verify that you are on the homepage.
+    home.clickSignupBtn();
+    signP.verifySignupPage();
   })
 
   it("signup with correct mail id", () => {
-    // Click the signup button on the homepage
-    home.clickSignupBtn();
-    // Verify that the signup page is displayed
-    signP.verifySignupPage();
     // Enter user name from test data
     signP.enterName(data.userName);
     // Input a random email from test data
@@ -67,11 +65,6 @@ const signP=new signup();
   })
 
   it("signup with incorrect mail id", () => {
-    // Click the signup button on the homepage
-    home.clickSignupBtn();
-    // Verify that the signup page is displayed
-    signP.verifySignupPage();
-    // Enter user name from test data
     signP.enterName(data.userName);
     // Input an invalid email from test data
     signP.inputInvalidEmail(data.wrongMailId);
@@ -82,10 +75,6 @@ const signP=new signup();
   })
 
   it("Register User with existing email", () => {
-    // Click the signup button on the homepage
-    home.clickSignupBtn();
-    // Verify that the signup page is displayed
-    signP.verifySignupPage();
     // Enter user name from test data
     signP.enterName(data.userName);
     // Input an existing email from test data
@@ -97,10 +86,6 @@ const signP=new signup();
   })
 
   it("signup without entering password", () => {
-    // Click the signup button on the homepage
-    home.clickSignupBtn();
-    // Verify that the signup page is displayed
-    signP.verifySignupPage();
     // Enter user name from test data
     signP.enterName(data.userName);
     // Input a random email from test data
