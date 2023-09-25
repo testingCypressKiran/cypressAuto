@@ -5,10 +5,14 @@ import signup from "../PageObject/SignupLoginPage.js";
 const data = require('../fixtures/data.json');
 
 // Create instances of Page Objects
+
 const home = new homepage(); // home is the object reference variable
 const signP = new signup();
 
 describe('signup with POM', () => {
+
+const home=new homepage(); 
+const signP=new signup();
 
   beforeEach(() => {
     cy.visit('/')
