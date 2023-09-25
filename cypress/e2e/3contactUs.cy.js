@@ -23,8 +23,8 @@ describe('Contact Us Form',()=>{
      conct.uploadFile();
      conct.submitButton();
      conct.verifyAlert();
-     conct.verifySuccessfulSubmittion();
-     conct.clickhomeButton();
+     conct.verifySuccessfulSubmission();
+     conct.clickHomeButton();
      home.verifyLogo(); 
 
   })

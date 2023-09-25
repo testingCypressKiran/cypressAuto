@@ -15,7 +15,7 @@ class contactUs {
     typeMessage = "#message";
     btn_Submit = "input[value='Submit']";
     successalert = ".status.alert.alert-success";
-    butonHome = "a[class='btn btn-success']>span";
+    buttonHome = "a[class='btn btn-success']>span";
     fileUpload = "input[name='upload_file']";
 
     // Method to verify the presence of the "Contact Us" page
@@ -38,12 +38,12 @@ class contactUs {
 
     // Method to enter a subject into the "Subject" input field
     enterSubject(subject) {
-        cy.get(this.typeSubject).should('be visible').type(subject);
+        cy.get(this.typeSubject).should('be.visible').type(subject);
     }
 
     // Method to enter a message into the message input field
     enterMessage(message) {
-        cy.get(this.typeMessage).should('be visible').type(message);
+        cy.get(this.typeMessage).should('be.visible').type(message);
     }
 
     // Method to upload a file using the 'cypress-file-upload' plugin
@@ -73,7 +73,7 @@ class contactUs {
 
     // Method to click a "Home" button
     clickHomeButton() {
-        cy.get(this.butonHome).should('be.visible').click();
+        cy.get(this.buttonHome).should('be.visible').click();
     }
 }
 
