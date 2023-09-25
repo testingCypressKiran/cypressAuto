@@ -42,7 +42,7 @@ describe('Adding products with POM',()=>{
      paym.inputCvv(data.cvv);
      paym.inputMonth(data.month);
      paym.inputYear(data.year);
-     paym.clickPayBtn(); //Click on the pay and confirm button and verify the same
+     paym.clickPayBtn(); //Click on the pay and confirm button and verify the same.
      productP.clickLastBtn();
      homeP.verifyLogo();
     })
