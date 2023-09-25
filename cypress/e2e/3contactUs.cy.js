@@ -25,7 +25,7 @@ describe('Contact Us Form',()=>{
      conct.verifyAlert();
      conct.verifySuccessfulSubmittion();
      conct.clickhomeButton();
-     home.verifyLogo(); //yy
+     home.verifyLogo(); 
 
   })
 

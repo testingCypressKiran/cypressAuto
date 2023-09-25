@@ -20,5 +20,6 @@ describe('Adding review with POM',()=>{
      rev.inputEmail(data.emailId);
      rev.inputAddReview(data.addReview);
      rev.clickSubmit();
+     rev.verifySuccessfulMessage()
   })
 })

@@ -5,83 +5,131 @@ import signup from "../PageObject/SignupLoginPage.js";
 const data = require('../fixtures/data.json');
 
 // Create instances of Page Objects
-const home=new homepage(); //home is the object refence variable
-const signP=new signup();
+const home = new homepage(); // home is the object reference variable
+const signP = new signup();
 
-describe('signup with POM',()=>{
-  
+describe('signup with POM', () => {
+
   beforeEach(() => {
-    cy.visit('/') 
+    cy.visit('/')
     home.verifyLogo() // Verify that you are on the homepage.
   })
-  
-    it("signup with correct mail id",()=>{
-      home.clickSignupBtn();
-      signP.verifySignupPage();
-      signP.enterName(data.userName);
-      signP.inputRandomEmail(data.randomMailId); 
-      signP.clickSignupbtn();      
-      signP.txt_verifyAccountInformation();
-      signP.clickRadioBtn();  //select and verify radio button.
-      signP.enterSignupPassword(data.password);
-      signP.verifyDropdownDay();
-      signP.verifyDropdownMonth();
-      signP.verifyDropdownYear();
-      signP.verifyCheckboxes();
-      signP.enterFname(data.userName);
-      signP.inputLname(data.lname);
-      signP.inputAddress(data.address);
-      signP.inputState(data.state);
-      signP.inputCity(data.city);
-      signP.inputZipcode(data.zip);
-      signP.inputNmuber(data.Mnumber);
-      signP.clickCreateBtn(); 
-      signP.verifyAccountCreation();
-      signP.clickContBtn();
-      home.verifyLogin();
-    })
 
-    it("signup with incorrect mail id",()=>{
-     home.clickSignupBtn();
-     signP.verifySignupPage();
-     signP.enterName(data.userName);
-     signP.inputInvalidEmail(data.wrongMailId); 
-     signP.clickSignupbtn();
-     signP.verifyMail(); 
-   
-    })
+  it("signup with correct mail id", () => {
+    // Click the signup button on the homepage
+    home.clickSignupBtn();
+    // Verify that the signup page is displayed
+    signP.verifySignupPage();
+    // Enter user name from test data
+    signP.enterName(data.userName);
+    // Input a random email from test data
+    signP.inputRandomEmail(data.randomMailId);
+    // Click the signup button on the signup page
+    signP.clickSignupbtn();
+    // Verify the account information section is displayed
+    signP.txt_verifyAccountInformation();
+    // Click and verify the radio button
+    signP.clickRadioBtn();
+    // Enter a signup password from test data
+    signP.enterSignupPassword(data.password);
+    // Verify the dropdowns for day, month, and year
+    signP.verifyDropdownDay();
+    signP.verifyDropdownMonth();
+    signP.verifyDropdownYear();
+    // Verify the checkboxes
+    signP.verifyCheckboxes();
+    // Enter first name from test data
+    signP.enterFname(data.userName);
+    // Input last name from test data
+    signP.inputLname(data.lname);
+    // Input address from test data
+    signP.inputAddress(data.address);
+    // Input state from test data
+    signP.inputState(data.state);
+    // Input city from test data
+    signP.inputCity(data.city);
+    // Input zip code from test data
+    signP.inputZipcode(data.zip);
+    // Input phone number from test data
+    signP.inputNmuber(data.Mnumber);
+    // Click the create button
+    signP.clickCreateBtn();
+    // Verify that the account creation is successful
+    signP.verifyAccountCreation();
+    // Click the continue button
+    signP.clickContBtn();
+    // Verify that the login page is displayed
+    home.verifyLogin();
+  })
 
-    
-    it("Register User with existing email",()=>{
-      home.clickSignupBtn();
-      signP.verifySignupPage();
-      signP.enterName(data.userName);
-      signP.inputExistingMailId(data.emailId); 
-      signP.clickSignupbtn();
-      signP.verifyExistingMailId(); 
-    })
+  it("signup with incorrect mail id", () => {
+    // Click the signup button on the homepage
+    home.clickSignupBtn();
+    // Verify that the signup page is displayed
+    signP.verifySignupPage();
+    // Enter user name from test data
+    signP.enterName(data.userName);
+    // Input an invalid email from test data
+    signP.inputInvalidEmail(data.wrongMailId);
+    // Click the signup button on the signup page
+    signP.clickSignupbtn();
+    // Verify that an error message related to the email is displayed
+    signP.verifyMail();
+  })
 
+  it("Register User with existing email", () => {
+    // Click the signup button on the homepage
+    home.clickSignupBtn();
+    // Verify that the signup page is displayed
+    signP.verifySignupPage();
+    // Enter user name from test data
+    signP.enterName(data.userName);
+    // Input an existing email from test data
+    signP.inputExistingMailId(data.emailId);
+    // Click the signup button on the signup page
+    signP.clickSignupbtn();
+    // Verify that an error message related to the existing email is displayed
+    signP.verifyExistingMailId();
+  })
 
-    it("signup without entering password",()=>{
-      home.clickSignupBtn();
-      signP.verifySignupPage();
-      signP.enterName(data.userName);
-      signP.inputRandomEmail(data.randomMailId2); 
-      signP.clickSignupbtn();
-      signP.txt_verifyAccountInformation();
-      signP.clickRadioBtn(); //select and verify radio button
-      signP.verifyDropdownDay();
-      signP.verifyDropdownMonth();
-      signP.verifyDropdownYear();
-      signP.verifyCheckboxes();
-      signP.enterFname(data.userName);
-      signP.inputLname(data.lname);
-      signP.inputAddress(data.address);
-      signP.inputState(data.state);
-      signP.inputCity(data.city);
-      signP.inputZipcode(data.zip);
-      signP.inputNmuber(data.Mnumber);
-      signP.clickCreateBtn();
-      signP.verifyNotEnteringPassword();
-    })
+  it("signup without entering password", () => {
+    // Click the signup button on the homepage
+    home.clickSignupBtn();
+    // Verify that the signup page is displayed
+    signP.verifySignupPage();
+    // Enter user name from test data
+    signP.enterName(data.userName);
+    // Input a random email from test data
+    signP.inputRandomEmail(data.randomMailId2);
+    // Click the signup button on the signup page
+    signP.clickSignupbtn();
+    // Verify that the account information section is displayed
+    signP.txt_verifyAccountInformation();
+    // Click and verify the radio button
+    signP.clickRadioBtn();
+    // Verify the dropdowns for day, month, and year
+    signP.verifyDropdownDay();
+    signP.verifyDropdownMonth();
+    signP.verifyDropdownYear();
+    // Verify the checkboxes
+    signP.verifyCheckboxes();
+    // Enter first name from test data
+    signP.enterFname(data.userName);
+    // Input last name from test data
+    signP.inputLname(data.lname);
+    // Input address from test data
+    signP.inputAddress(data.address);
+    // Input state from test data
+    signP.inputState(data.state);
+    // Input city from test data
+    signP.inputCity(data.city);
+    // Input zip code from test data
+    signP.inputZipcode(data.zip);
+    // Input phone number from test data
+    signP.inputNmuber(data.Mnumber);
+    // Click the create button without entering a password
+    signP.clickCreateBtn();
+    // Verify that an error message related to not entering a password is displayed
+    signP.verifyNotEnteringPassword();
+  })
 })
