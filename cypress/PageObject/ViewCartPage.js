@@ -46,7 +46,8 @@ class viewCart {
             const finalprice = parseFloat(total.text().replace(/[^0-9-]+/g, ""));
             expect(finalprice).to.equal(sum);
         });
-    }
+   }
+
 }
 
 export default viewCart;

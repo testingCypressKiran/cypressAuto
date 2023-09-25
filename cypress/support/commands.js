@@ -34,3 +34,4 @@ Cypress.Commands.add(
       cy.get(selector).invoke("text").should("eq", expectedText);
     }
   );
+  

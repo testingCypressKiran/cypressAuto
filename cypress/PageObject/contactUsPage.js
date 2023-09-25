@@ -1,9 +1,13 @@
-const data = require('../fixtures/data.json'); // Importing data from a JSON file
+// Import test data and configuration from a JSON file
+const data = require('../fixtures/data.json');
 
-import 'cypress-file-upload'
+// Import the 'cypress-file-upload' plugin for file upload testing
+import 'cypress-file-upload';
 
-class contactUs{
+// Define a class for interacting with a web page
+class contactUs {
 
+    // CSS selectors for various elements on the page
     verify_contactUs = "div[class='contact-form']>h2[class='title text-center']";
     typeName = "input[placeholder='Name']";
     typeEmail = "input[placeholder='Email']";
@@ -14,60 +18,64 @@ class contactUs{
     butonHome = "a[class='btn btn-success']>span";
     fileUpload = "input[name='upload_file']";
 
-
-
-    verifyContactUsPage(){ 
-    cy.get(this.verify_contactUs).invoke("text")
-    .then((text2)=>
-    {
-        expect(text2).to.eq(data.contactUsPageVerifyText)
-    })
+    // Method to verify the presence of the "Contact Us" page
+    verifyContactUsPage() {
+        cy.get(this.verify_contactUs).invoke("text")
+            .then((text2) => {
+                expect(text2).to.eq(data.contactUsPageVerifyText);
+            })
     }
 
-    enterName(name){
+    // Method to enter a name into the "Name" input field
+    enterName(name) {
         cy.get(this.typeName).should('be.visible').type(name);
     }
 
-    enterEmail(email){
+    // Method to enter an email into the "Email" input field
+    enterEmail(email) {
         cy.get(this.typeEmail).should('be.visible').type(email);
     }
 
-    enterSubject(subject){
-        cy.get(this.typeSubject).should('be.visible').type(subject);
-
+    // Method to enter a subject into the "Subject" input field
+    enterSubject(subject) {
+        cy.get(this.typeSubject).should('be visible').type(subject);
     }
 
-    enterMessage(message){
-        cy.get(this.typeMessage).should('be.visible').type(message);
-
+    // Method to enter a message into the message input field
+    enterMessage(message) {
+        cy.get(this.typeMessage).should('be visible').type(message);
     }
 
-    uploadFile(){
+    // Method to upload a file using the 'cypress-file-upload' plugin
+    uploadFile() {
         cy.get(this.fileUpload).attachFile(data.fileUpload);
-        
     }
-    
-    submitButton(){
+
+    // Method to click the "Submit" button
+    submitButton() {
         cy.get(this.btn_Submit).should('be.visible').click();
     }
-    
-    verifyAlert(){
-        cy.on('window:alert',(t)=>{
+
+    // Method to verify a window alert
+    verifyAlert() {
+        cy.on('window:alert', (t) => {
             expect(t).to.contains(data.windowAlertText);
         })
     }
 
-    verifySuccessfulSubmittion(){
+    // Method to verify a successful submission alert
+    verifySuccessfulSubmission() {
         cy.get(this.successalert).invoke("text")
-        .then((t)=>
-        {
-            expect(t).to.eq(data.successfulSubmText)
-        })
-    } 
-    
-    clickhomeButton(){
-    cy.get(this.butonHome).should('be.visible').click();
-    }             
+            .then((t) => {
+                expect(t).to.eq(data.successfulSubmText);
+            })
+    }
+
+    // Method to click a "Home" button
+    clickHomeButton() {
+        cy.get(this.butonHome).should('be.visible').click();
+    }
 }
 
+// Export the 'contactUs' class as the default export
 export default contactUs;
