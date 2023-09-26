@@ -22,9 +22,8 @@ const signP=new signup();
   })
 
   it("signup with correct mail id", () => {
-    // Enter user name from test data
+   
     signP.enterName(data.userName);
-    // Input a random email from test data
     signP.inputRandomEmail(data.randomMailId);
     // Click the signup button on the signup page
     signP.clickSignupbtn();
